@@ -44,6 +44,8 @@ Router.get('/:_id', async (req, res) => {
     }
 });
 
+// validate user data
+
 /**
  * Route   /update/
  * Des     Update user data
