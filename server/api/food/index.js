@@ -1,4 +1,4 @@
-import express from "exprss";
+import express from "express";
 import FoodModel from "../../database/allModels";
 
 const Router = express.Router();
