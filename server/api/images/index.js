@@ -30,7 +30,7 @@ Router.post('/:_id', async (req, res) => {
 });
 
 /**
- * Route   /image
+ * Route   /
  * Des    Upload given image to s3 bucket and save file link to mongoDB
  * Params  none
  * Access  Public
@@ -48,13 +48,22 @@ Router.post('/', upload.single("file"), async (req, res) => {
             ACL: "public-read", //access control list
         };
 
-        const uploadImage = await s3Upload({ bucketOptions });
+        const uploadImage = await s3Upload(bucketOptions);
 
-        return res.status(200).json({ uploadImage });
+        const dbUpload = await ImageModel.create({
+            images: [
+                {
+                    location: uploadImage.Location,
+                },
+            ],
+        });
+
+        return res.status(200).json({ dbUpload });
 
     } catch (error) {
         return res.status(500).json({ error: error.message });
     }
 });
+
 
 export default Router;
