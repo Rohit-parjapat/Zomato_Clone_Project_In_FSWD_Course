@@ -1,0 +1,4 @@
+__v,_id,createdAt,isFoodReview,isRestaurantReview,photos,rating,restaurant,reviewText,updatedAt,user
+0,616d6c53ac8b113e5bac0a51,2021-10-18T12:45:07.918Z,true,false,[],4,61619f4fa8bb5a753a157e5c,asdfasdf,2021-10-18T12:45:07.918Z,616d69f9ac8b113e5bac099f
+0,6179680ad09a016f8ba9c11e,2021-10-27T14:54:02.357Z,,false,[],4,61619f4fa8bb5a753a157e5c,asbcs,2021-10-27T14:54:02.357Z,61778ac103117c5375919ce9
+0,61815964e454974b44f437ce,2021-11-02T15:29:40.933Z,true,false,[],3,61619f4fa8bb5a753a157e5c,asdfasdfs,2021-11-02T15:29:40.933Z,616d69f9ac8b113e5bac099f

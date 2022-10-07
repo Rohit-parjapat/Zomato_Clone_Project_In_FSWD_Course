@@ -52,13 +52,7 @@ Router.get('/c/:category', async (req, res) => {
     try {
         await validateCategory(req.params);
         const { category } = req.params;
-        const foods = await FoodModel.find({
-            category: {
-                $regex: category,
-                $option: "i"
-            },
-        });
-
+        const foods = await FoodModel.find({ name: new RegExp(category, 'i') });
         if (!foods) return res.status(404).json({ error: `No food Matched with ${category}` })
 
         return res.json({ foods });

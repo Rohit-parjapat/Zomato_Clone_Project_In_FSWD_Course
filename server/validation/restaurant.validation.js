@@ -2,17 +2,17 @@ import joi from 'joi';
 import { Schema } from 'mongoose';
 
 export const validateRestaurantCity = (restaurantObject) => {
-    const Scehma = joi.object({
+    const Schema = joi.object({
         city: joi.string().required(),
     });
 
-    return Schema.valodateAsync(restaurantObject);
+    return Schema.validateAsync({ restaurantObject });
 };
 
 export const validateSearchString = (searchStringObject) => {
-    const Scehma = joi.object({
+    const Schema = joi.object({
         searchString: joi.string().required(),
     });
 
-    return Schema.valodateAsync(searchStringObject);
+    return Schema.validateAsync({ searchStringObject });
 };

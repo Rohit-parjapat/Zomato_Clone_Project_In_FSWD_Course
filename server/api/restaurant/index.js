@@ -61,12 +61,7 @@ Router.get('/search/:searchString', async (req, res) => {
     try {
         const { searchString } = req.params;
         await validateSearchString(req.params);
-        const restaurants = await RestaurantModel.find({
-            name: {
-                $regex: searchString,
-                $option: "i"
-            },
-        });
+        const restaurants = await RestaurantModel.find({ name: new RegExp(searchString, 'i') });
 
         if (!restaurants) {
             return res.status(404).json({ error: `No restaurant matched with ${searchString}.` });
