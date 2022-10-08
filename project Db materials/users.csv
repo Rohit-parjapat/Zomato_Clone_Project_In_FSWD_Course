@@ -1,0 +1,4 @@
+__v,_id,address,createdAt,email,fullName,password,phoneNumber,updatedAt
+0,632f12721c1512bfdbbae843,[],2022-09-24T14:21:38.949Z,text@email.com,Aditya,$2a$08$W.h3yP1/h9TI18In2UiPzOeS9AxtIn./qnrDi..8.2caQteAiUSm.,[1232342421],2022-09-27T14:58:06.164Z
+0,6335b9377a6806c6b1d80117,[],2022-09-29T15:26:47.492Z,test1@email.com,Aditya Gusain,$2a$08$teu.KkMpDlz/mXIZOMc/y.fKmbuGNbWPWLnNuQFwcf4C/EPIbNAa2,[],2022-09-29T15:26:47.492Z
+0,63385b8f6e97c24aeada1576,[],2022-10-01T15:23:59.123Z,aditya.gusain2002@gmail.com,Aditya Gusain,,[],2022-10-01T15:23:59.123Z
