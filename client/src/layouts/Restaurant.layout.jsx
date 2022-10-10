@@ -17,7 +17,7 @@ const RestaurantLayout = (Component) => ({ ...props }) => {
         <>
             <Navbar />
             <Component {...props} />
-            {/* <div className='conttainer mx-auto px-4 mt-8 lg:px-20 pb-20'>
+            {/* <div className='conttainer mx-auto px-4 mt-8 lg:px-5 pb-20'>
                 <ImageGrid images={ } />
                 <RestaurantInfo name='' restaurantRating='' deliveryRating='' cuisine='' address='' />
                 <div className='m-4 flex flex-wrap gap-3 mx-auto'>
