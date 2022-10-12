@@ -1,47 +1,77 @@
-import React from 'react';
-import { TiStarOutline } from 'react-icons/ti';
-import { RiDirectionLine, RiShareForwordLine } from 'react-icons/ri';
-import { BiBookmarkPlus } from 'react-icons/bi';
+import React, { useState } from "react";
+import { TiStarOutline } from "react-icons/ti";
+import { RiDirectionLine, RiShareForwardLine } from "react-icons/ri";
+import { BiBookmarkPlus } from "react-icons/bi";
+import { useParams } from "react-router-dom";
 
-//Components
+// components
+import Navbar from "../components/Navbar";
+import ImageGrid from "../components/Restaurant/ImageGrid";
+import InfoButton from "../components/Restaurant/InfoButton";
+import RestaurantInfo from "../components/Restaurant/RestaurantInfo";
+import Tabs from "../components/Restaurant/Tabs";
+import CartContainer from "../components/Cart/CartContainer";
 
-import Navbar from '../components/Navbar';
-// import ImageGrid from '../components/Restaurant/ImageGrid';
-// import InfoButton from '../components/Restaurant/InfoButton';
-// import RestaurantInfo from '../components/Restaurant/RestaurantInfo';
-// import Tabs from '../components/Restaurant/Tabs';
-// import CartContainer from '../components/Cart/CardtContainer';
+const RestaurantLayout = ({ children: Component, ...props }) => {
+    const [restaurant, setRestaurant] = useState({
+        images: [
+            {
+                location:
+                    "https://b.zmtcdn.com/data/pictures/chains/8/301718/9386449fd71cc10c9b1007469be4fe10.jpg",
+            },
+            {
+                location:
+                    "https://b.zmtcdn.com/data/pictures/chains/8/301718/521b89e0710553cee262e5f0b13efb23.jpg",
+            },
+            {
+                location:
+                    "https://b.zmtcdn.com/data/pictures/5/18216915/1cd1d09c0a137b5d8da7a7f7310cd919.jpg",
+            },
+            {
+                location:
+                    "https://b.zmtcdn.com/data/pictures/chains/8/301718/521b89e0710553cee262e5f0b13efb23.jpg",
+            },
+            {
+                location:
+                    "https://b.zmtcdn.com/data/pictures/5/18216915/1cd1d09c0a137b5d8da7a7f7310cd919.jpg",
+            },
+        ],
+        name: "Biryani Blues",
+        cuisine: ["Biryani", "Kebab", "Desserts"],
+        address: "Connaught Place, New Delhi",
+        restaurantRating: 4.1,
+        deliveryRating: 3.2,
+    });
 
-const RestaurantLayout = (Component) => ({ ...props }) => {
+    const { id } = useParams();
     return (
         <>
             <Navbar />
-            <Component {...props} />
-            {/* <div className='conttainer mx-auto px-4 mt-8 lg:px-5 pb-20'>
-                <ImageGrid images={ } />
-                <RestaurantInfo name='' restaurantRating='' deliveryRating='' cuisine='' address='' />
-                <div className='m-4 flex flex-wrap gap-3 mx-auto'>
-                    <InfoButton isactive='true'>
-                        <TiStarOutline />  Add Review
+            <div className="container mx-auto px-4 mt-8 lg:px-20 pb-20">
+                <ImageGrid images={restaurant.images} />
+                <RestaurantInfo {...restaurant} />
+                <div className="my-4 flex flex-wrap gap-3 mx-auto">
+                    <InfoButton isActive="true">
+                        <TiStarOutline /> Add Review
                     </InfoButton>
-                    <InfoButton >
-                        <RiDirectionLine />  Direction
+                    <InfoButton>
+                        <RiDirectionLine /> Direction
                     </InfoButton>
-                    <InfoButton >
-                        <BiBookmarkPlus />  Bookmark
+                    <InfoButton>
+                        <BiBookmarkPlus /> Bookmark
                     </InfoButton>
-                    <InfoButton >
-                        <RiShareForwordLine />  Share
+                    <InfoButton>
+                        <RiShareForwardLine /> Share
                     </InfoButton>
                 </div>
-                <div className='my-10'>
+                <div className="my-10">
                     <Tabs />
                 </div>
-               <Component {...props} />
+                {Component}
             </div>
-            <CartContainer /> */}
+            <CartContainer />
         </>
-    )
-}
+    );
+};
 
 export default RestaurantLayout;
