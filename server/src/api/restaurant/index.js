@@ -1,4 +1,5 @@
 import express from "express";
+import passport from 'passport';
 import { RestaurantModel } from "../../database/allModels";
 import { validateRestaurantCity, validateSearchString } from "../../validation/restaurant.validation";
 
@@ -71,6 +72,29 @@ Router.get('/search/:searchString', async (req, res) => {
         return res.status(500).json({ error: error.message });
     }
 });
+
+/**
+ * Route     /new
+ * Des       Add new restaurant
+ * Params    data
+ * Access    Private
+ * Method    POST
+ */
+Router.post(
+    "/new",
+    passport.authenticate("jwt", { session: false }),
+    async (req, res) => {
+        try {
+            const { restaurantDetails } = req.body;
+
+            const addNewRestaurant = await RestaurantModel.create(restaurantDetails);
+
+            return res.json({ Restaurant: addNewRestaurant });
+        } catch (error) {
+            return res.status(500).json({ error: error.message });
+        }
+    }
+);
 
 
 export default Router;
