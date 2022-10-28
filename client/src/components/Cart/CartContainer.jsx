@@ -37,7 +37,7 @@ const CartData = ({ toggle }) => {
         <>
             <div className="flex items-center justify-between">
                 <div className="flex flex-col items-start">
-                    <small className="flex items-center gap-1" onClick={toggle}>
+                    <small className="flex items-center gap-1 bg-zomato-300 hover:bg-zomato-500 rounded-md text-white px-3 cursor-pointer" onClick={toggle}>
                         {cart.length} Item <IoMdArrowDropup />
                     </small>
                     <h4>
@@ -94,7 +94,7 @@ const CartContainer = () => {
                 <>
                     {isOpen && (
                         <div className="w-full overflow-y-scroll h-48 bg-white z-20 p-2 bottom-14 px-3 fixed">
-                            <div className="flex items-center justify-between md:px-20">
+                            <div className="flex items-center justify-between md:px-20 bg-zomato-300 rounded-lg text-white px-5">
                                 <h3 className="text-xl font-semibold">Your Orders</h3>
                                 <IoCloseSharp onClick={closeCart} className="cursor-pointer" />
                             </div>
