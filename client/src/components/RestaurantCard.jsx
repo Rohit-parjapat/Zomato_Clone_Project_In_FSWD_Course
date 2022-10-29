@@ -12,19 +12,14 @@ const RestaurantCard = (props) => {
   });
 
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(getImage(props.photos)).then((data) => {
       const images = data.payload.images;
       setImage((prev) => ({ ...prev, images }));
     });
   }, [props.photos]);
-
   return (
-    <Link
-      to={`/restaurant/${props._id}/overview`}
-      // className="w-full md:w-1/2 lg:w-1/3"
-    >
+    <Link to={`/restaurant/${props._id}/overview`}>
       <div className="bg-white p-4 w-full rounded-2xl transition duration-700 ease-in-out  sm:shadow-md md:shadow-none hover:drop-shadow-lg">
         <div className="w-full relative">
           <div className="w-full bottom-4 flex items-end justify-between">
@@ -41,7 +36,7 @@ const RestaurantCard = (props) => {
               )}
             </div>
             <img
-              src={image.images.length && image.images[0].location}
+              src={image.images.length && image.images[0].src}
               alt="food"
               className="w-full h-full rounded-2xl"
             />

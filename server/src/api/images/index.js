@@ -36,25 +36,26 @@ Router.get("/:_id", async (req, res) => {
  * Access  Public
  * Method  POST
  */
-Router.post("/", upload.single("file"), async (req, res) => {
+Router.post("/", upload.array("files", 5), async (req, res) => {
   try {
-    const file = req.file;
-    const bucketOptions = {
-      Bucket: "zomato-clone-project-fswd",
-      Key: file.originalname,
-      Body: file.buffer,
-      ContentType: file.mimetype,
-      ACL: "public-read", //access control list
-    };
-
-    const uploadImage = await s3Upload(bucketOptions);
+    const file = req.files;
+    let uploadImage = [];
+    for (let i = 0; i < file.length; i++) {
+      const bucketOptions = {
+        Bucket: "zomato-clone-project-fswd",
+        Key: file[i].originalname,
+        Body: file[i].buffer,
+        ContentType: file[i].mimetype,
+        ACL: "public-read", //access control list
+      };
+      uploadImage[i] = await s3Upload(bucketOptions);
+    }
+    const array = uploadImage.map((image) => {
+      return { src: image.Location };
+    });
 
     const dbUpload = await ImageModel.create({
-      images: [
-        {
-          location: uploadImage.Location,
-        },
-      ],
+      images: array,
     });
 
     return res.status(200).json({ dbUpload });
