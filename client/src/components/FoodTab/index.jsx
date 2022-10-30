@@ -70,7 +70,7 @@ const LargeTabs = () => {
       imageActive:
         "https://b.zmtcdn.com/data/o2_assets/c0bb85d3a6347b2ec070a8db694588261616149578.png",
       name: "Delivery",
-      activeColor: "yellow",
+      activeColor: "yellow-200",
     },
     {
       id: "dining",
@@ -78,7 +78,7 @@ const LargeTabs = () => {
         "https://b.zmtcdn.com/data/o2_assets/78d25215ff4c1299578ed36eefd5f39d1616149985.png",
       imageActive:
         "https://b.zmtcdn.com/data/o2_assets/30fa0a844f3ba82073e5f78c65c18b371616149662.png",
-      activeColor: "blue",
+      activeColor: "blue-500",
       name: "Dining Out",
     },
     {
@@ -87,7 +87,7 @@ const LargeTabs = () => {
         "https://b.zmtcdn.com/data/o2_assets/01040767e4943c398e38e3592bb1ba8a1616150142.png",
       imageActive:
         "https://b.zmtcdn.com/data/o2_assets/855687dc64a5e06d737dae45b7f6a13b1616149818.png",
-      activeColor: "purple",
+      activeColor: "purple-500",
       name: "Night life",
     },
     {
@@ -96,7 +96,7 @@ const LargeTabs = () => {
         "https://b.zmtcdn.com/data/o2_assets/54cad8274d3c3ec7129e0808a13b27c31616582882.png",
       imageActive:
         "https://b.zmtcdn.com/data/o2_assets/0f6dcb1aef93fa03ea3f91f37918f3bc1616649503.png",
-      activeColor: "yellow",
+      activeColor: "yellow-500",
       name: "Nutrition",
     },
   ]);
