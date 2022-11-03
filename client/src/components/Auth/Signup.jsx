@@ -4,6 +4,7 @@ import { FcGoogle } from "react-icons/fc";
 
 // redux
 import { useDispatch } from "react-redux";
+import { API_URL } from "../../key";
 import { signUp } from "../../redux/reducers/auth/auth.action";
 import { getMySelf } from "../../redux/reducers/user/user.action";
 
@@ -31,8 +32,7 @@ const Signup = ({ isOpen, setIsOpen }) => {
     setUserData({ email: "", password: "", fullName: "" });
   };
 
-  const googleSignUp = () =>
-    (window.location.href = `${process.env.REACT_APP_CLIENT_URL}auth/google`);
+  const googleSignUp = () => (window.location.href = `${API_URL}/auth/google`);
 
   return (
     <>

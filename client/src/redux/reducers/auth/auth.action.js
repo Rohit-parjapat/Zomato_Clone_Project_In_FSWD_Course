@@ -1,4 +1,5 @@
 import axios from "axios";
+import { API_URL } from "../../../key";
 
 // redux types
 import { SIGN_IN, SIGN_UP, GOOGLE_AUTH, SIGN_OUT } from "./auth.type";
@@ -7,7 +8,7 @@ export const signIn = (userData) => async (dispatch) => {
   try {
     const User = await axios({
       method: "POST",
-      url: `${process.env.REACT_APP_CLIENT_URL}auth/signin`,
+      url: `${API_URL}/auth/signin`,
       data: { credentials: userData },
     });
 
@@ -30,7 +31,7 @@ export const signUp = (userData) => async (dispatch) => {
   try {
     const User = await axios({
       method: "POST",
-      url: `${process.env.REACT_APP_CLIENT_URL}auth/signup`,
+      url: `${API_URL}/auth/signup`,
       data: { credentials: userData },
     });
 

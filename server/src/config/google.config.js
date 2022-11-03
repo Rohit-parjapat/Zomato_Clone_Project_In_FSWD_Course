@@ -1,4 +1,5 @@
 import googleOAuth from "passport-google-oauth2";
+import { API_URL } from "../../../client/src/key";
 
 import { UserModel } from "../database/allModels";
 
@@ -10,7 +11,7 @@ export default (passport) => {
       {
         clientID: process.env.GOOGLE_CLIENT_ID,
         clientSecret: process.env.GOOGLE_SECRET_ID,
-        callbackURL: `${process.env.REACT_APP_CLIENT_URL}auth/google/callback`,
+        callbackURL: `${API_URL}/auth/google/callback`,
       },
 
       async (accessToken, refreshToken, profile, done) => {

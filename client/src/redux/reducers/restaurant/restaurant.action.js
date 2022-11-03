@@ -1,4 +1,5 @@
 import axios from "axios";
+import { API_URL } from "../../../key";
 
 // redux types
 import { GET_RESTAURANT, GET_SPECIFIC_RESTAURANT } from "./restaurant.type";
@@ -7,7 +8,7 @@ export const getRestaurant = () => async (dispatch) => {
   try {
     const restaurantList = await axios({
       method: "GET",
-      url: `${process.env.REACT_APP_CLIENT_URL}restaurant?city=NCR`,
+      url: `${API_URL}/restaurant?city=NCR`,
     });
 
     return dispatch({
@@ -23,7 +24,7 @@ export const getSpecificRestaurant = (_id) => async (dispatch) => {
   try {
     const restaurantList = await axios({
       method: "GET",
-      url: `${process.env.REACT_APP_CLIENT_URL}restaurant/${_id}`,
+      url: `${API_URL}/restaurant/${_id}`,
     });
 
     return dispatch({
