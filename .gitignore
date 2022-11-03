@@ -1,3 +1,7 @@
 /server/node_modules
 /server/package-lock.json
 /server/.env
+/server/dist
+/client/node_modules
+/client/package-lock.json
+/project Db materials/client_secret_652147979498-g3ls2sge9tgl53c1p4nstvtj1vm81131.apps.googleusercontent.com.json
