@@ -1,0 +1,37 @@
+version: "3"
+services:
+  nginx:
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: ./nginx
+    ports:
+      - "3080:80"
+    depends_on:
+      - nodeserver
+      - client
+  nodeserver:
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: ./server
+    volumes:
+      - /app/node_modules
+      - ./server:/app
+    environment:
+      - MONGO_URL=mongodb+srv://rohitParjapat:rohitParjapat@cluster0.yde0bnb.mongodb.net/?retryWrites=true&w=majority
+      - AWS_S3_ACCESS_KEY = AKIA6NSDGRJG3T4AADCW
+      - AWS_S3_SECRET_KEY = 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
+      - GOOGLE_CLIENT_ID = 652147979498-g3ls2sge9tgl53c1p4nstvtj1vm81131.apps.googleusercontent.com
+      - GOOGLE_SECRET_ID = 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
+    ports:
+      - "4000:4000"
+  client:
+    build:
+      dockerfile: Dockerfile
+      context: ./client
+    volumes:
+      - /app/node_modules
+      - ./client:/app
+    ports:
+      - "3000:3000"
