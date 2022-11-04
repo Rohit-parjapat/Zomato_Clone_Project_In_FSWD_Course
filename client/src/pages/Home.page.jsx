@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 // Layout
-import HomeLayout from "../layouts/Homepage.layout";
+import HomeLayout from "../layouts/HomePage.layout";
 
 // components
 import Delivery from "../components/Delivery";
