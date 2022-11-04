@@ -6,12 +6,6 @@ COPY package*.json ./
 
 RUN npm i --silent
 
-RUN mkdir node_modules/.cache && -R 777 node_modules/.cache
+COPY . .
 
-COPY . ./
-
-RUN npm run build
-
-COPY . ./
-
-CMD ["npm", "start"]
+CMD ["npm", "run", "dev"]
