@@ -13,7 +13,7 @@ services:
   nodeserver:
     restart: always
     build:
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
       context: ./server
     volumes:
       - /app/node_modules

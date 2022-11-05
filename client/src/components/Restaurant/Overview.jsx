@@ -41,8 +41,6 @@ const Overview = () => {
       dispatch(getImage(reduxState?.menuImage)).then((data) => {
         const images = [];
         data.payload.images.map(({ src }) => images.push(src));
-        console.log(data.payload);
-        console.log(images);
         setMenuImages(images);
       });
 
