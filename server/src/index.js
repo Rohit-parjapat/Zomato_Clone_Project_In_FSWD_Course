@@ -32,7 +32,9 @@ googleAuthConfig(passport);
 zomato.use(cors({ origin: "http://localhost:3000" }));
 zomato.use(helmet());
 zomato.use(express.json());
-zomato.use(session({ secret: "ZomatoApp" }));
+zomato.use(
+  session({ secret: "ZomatoApp", resave: false, saveUninitialized: true })
+);
 zomato.use(passport.initialize());
 zomato.use(passport.session());
 

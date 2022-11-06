@@ -1,5 +1,4 @@
 import googleOAuth from "passport-google-oauth2";
-import { API_URL } from "../../../client/src/key";
 
 import { UserModel } from "../database/allModels";
 
