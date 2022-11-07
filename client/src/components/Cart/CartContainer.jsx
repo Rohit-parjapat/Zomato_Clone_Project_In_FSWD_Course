@@ -52,7 +52,7 @@ const CartContainer = () => {
       {cart.length && (
         <>
           {isOpen && (
-            <div className="w-full overflow-y-scroll h-48 bg-white z-20 p-2 bottom-14 px-3 fixed">
+            <div className="w-full overflow-y-scroll h-48 bg-zomato-200 z-20 p-2 bottom-14 px-3 fixed">
               <div className="flex items-center justify-between md:px-20">
                 <h3 className="text-xl font-semibold">Your Orders</h3>
                 <IoCloseSharp onClick={closeCart} className="cursor-pointer" />
