@@ -5,8 +5,8 @@ prod_job:
 
   before_script:
     - mkdir -p ~/.ssh
-    - echo -e "$PROD__SSH__KEY" > ~/.ssh/id_rsa.pub
-    - chmod 600 ~/.ssh/id_rsa.pub
+    - echo -e "$PROD__SSH__KEY" > ~/.ssh/id_rsa
+    - chmod 600 ~/.ssh/id_rsa
     - '[[ -f /.dockerenv ]] && echo -e "HOST *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
 
   script:
