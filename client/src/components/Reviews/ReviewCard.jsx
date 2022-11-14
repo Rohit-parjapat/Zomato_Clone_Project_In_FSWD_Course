@@ -1,12 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { TiStarFullOutline } from "react-icons/ti";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
+
+// redux
+import { useSelector } from "react-redux";
 
 dayjs.extend(relativeTime);
 
 const ReviewCard = (props) => {
   const [user, setUser] = useState("Rohit");
+  const reduxState = useSelector((globalState) => globalState.user.fullName);
+
+  useEffect(() => {
+    reduxState && setUser(reduxState);
+  }, [reduxState]);
 
   return (
     <div className="my-3 flex flex-col gap-3 pb-4 border-b border-gray-300">
