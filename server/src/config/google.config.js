@@ -10,7 +10,7 @@ export default (passport) => {
       {
         clientID: process.env.GOOGLE_CLIENT_ID,
         clientSecret: process.env.GOOGLE_SECRET_ID,
-        callbackURL: `http://localhost:4000/auth/google/callback`,
+        callbackURL: `http://13.233.193.212:4000/auth/google/callback`,
       },
 
       async (accessToken, refreshToken, profile, done) => {
