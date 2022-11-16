@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const CheckoutNavbar = () => {
-  const user = useSelector((globalState) => globalState.user);
+  const user = useSelector((globalState) => globalState.user.fullName);
 
   const navigate = useNavigate();
 
@@ -30,12 +30,12 @@ const CheckoutNavbar = () => {
             <div className="flex items-center justify-center gap-3">
               <div className="border border-gray-300 text-zomato-400 w-10 h-10 rounded-full overflow-hidden">
                 <img
-                  src="/images/avatar.png"
+                  src="/images/avatar.jpg"
                   alt=""
                   className="w-full h-full rounded-full object-cover"
                 />
               </div>
-              {user.fullName}
+              {user}
             </div>
           </div>
         </div>

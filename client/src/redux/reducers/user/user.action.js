@@ -1,4 +1,5 @@
 import axios from "axios";
+import { API_URL } from "../../../key";
 
 // redux types
 import { GET_USER, SELF, CLEAR_USER } from "./user.type";
@@ -7,7 +8,7 @@ export const getUser = (_id) => async (dispatch) => {
   try {
     const User = await axios({
       method: "GET",
-      url: `${process.env.REACT_APP_CLIENT_URL}user/${_id}`,
+      url: `${API_URL}/user/${_id}`,
     });
 
     return dispatch({ type: GET_USER, payload: User.data });
@@ -20,7 +21,7 @@ export const getMySelf = () => async (dispatch) => {
   try {
     const User = await axios({
       method: "GET",
-      url: `${process.env.REACT_APP_CLIENT_URL}user/`,
+      url: `${API_URL}/user/`,
     });
 
     return dispatch({ type: SELF, payload: { ...User.data.user } });

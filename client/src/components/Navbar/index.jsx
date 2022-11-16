@@ -143,7 +143,7 @@ const LargeNav = ({
           </span>
           <input
             type="text"
-            placeholder="Delhi NCR"
+            placeholder="GURUGRAM"
             className="w-full focus:outline-none"
           />
           <IoMdArrowDropdown />

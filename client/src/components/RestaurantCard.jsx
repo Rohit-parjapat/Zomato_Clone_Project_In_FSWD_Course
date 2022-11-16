@@ -38,7 +38,7 @@ const RestaurantCard = (props) => {
             <img
               src={image.images.length && image.images[0].src}
               alt="food"
-              className="w-full h-full rounded-2xl"
+              className="w-full h-52 rounded-2xl"
             />
           </div>
           <div className="my-2 flex flex-col gap-2">

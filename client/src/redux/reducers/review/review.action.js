@@ -1,4 +1,5 @@
 import axios from "axios";
+import { API_URL } from "../../../key";
 
 // redux
 import { GET_REVIEW, POST_REVIEW } from "./review.type";
@@ -7,7 +8,7 @@ export const getReview = (resId) => async (dispatch) => {
   try {
     const reviewList = await axios({
       method: "GET",
-      url: `${process.env.REACT_APP_CLIENT_URL}review/${resId}`,
+      url: `${API_URL}/review/${resId}`,
     });
 
     return dispatch({ type: GET_REVIEW, payload: reviewList.data });
@@ -20,7 +21,7 @@ export const postReview = (reviewData) => async (dispatch) => {
   try {
     await axios({
       method: "POST",
-      url: `${process.env.REACT_APP_CLIENT_URL}review/new`,
+      url: `${API_URL}/review/new`,
       data: { reviewData },
     });
 

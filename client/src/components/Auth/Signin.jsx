@@ -7,6 +7,8 @@ import { useDispatch } from "react-redux";
 import { signIn } from "../../redux/reducers/auth/auth.action";
 import { getMySelf } from "../../redux/reducers/user/user.action";
 
+import { API_URL } from "../../key";
+
 const Signin = ({ isOpen, setIsOpen }) => {
   const [userData, setUserData] = useState({
     email: "",
@@ -30,8 +32,7 @@ const Signin = ({ isOpen, setIsOpen }) => {
     setUserData({ email: "", password: "" });
   };
 
-  const googleSignIn = () =>
-    (window.location.href = `${process.env.REACT_APP_CLIENT_URL}auth/google`);
+  const googleSignIn = () => (window.location.href = `${API_URL}/auth/google`);
 
   return (
     <>
